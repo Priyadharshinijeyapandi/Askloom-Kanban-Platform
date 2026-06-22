@@ -1,50 +1,127 @@
-# Taskloom Kanban
+# Askloom Kanban
 
-A production-shaped realtime collaborative Kanban platform built with Next.js 15, Supabase, PostgreSQL, Supabase Auth, Supabase Realtime, Tailwind CSS, shadcn-style primitives, Framer Motion, Zustand, dnd-kit, React Hook Form/Zod patterns, Lucide icons, and next-themes.
+A real-time collaborative Kanban project management platform built with Next.js, Supabase, and PostgreSQL. The application enables teams to organize tasks, track project progress, and collaborate efficiently through interactive Kanban boards.
 
-## Quick Start
+## Features
 
-1. Install dependencies:
+* Real-time collaborative Kanban boards
+* User authentication and authorization using Supabase Auth
+* Drag-and-drop task management
+* Workspace and board management
+* Task labels and status tracking
+* Responsive user interface
+* Dark and Light theme support
+* Optimistic state management using Zustand
+* Real-time synchronization across users
+
+## Tech Stack
+
+### Frontend
+
+* Next.js 15
+* TypeScript
+* Tailwind CSS
+* Framer Motion
+* shadcn/ui
+
+### Backend & Database
+
+* Supabase
+* PostgreSQL
+
+### State Management & Validation
+
+* Zustand
+* React Hook Form
+* Zod
+
+### Authentication
+
+* Supabase Auth
+
+## Project Structure
+
+```text
+app/            → Application routes and pages
+components/     → Reusable UI components
+lib/            → Utilities, validation, and Supabase clients
+store/          → Zustand state management
+supabase/       → Database schema and SQL scripts
+```
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/Askloom-Kanban-Platform.git
+cd Askloom-Kanban-Platform
+```
+
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-2. Create a Supabase project and run `supabase/schema.sql` in the SQL editor.
+### 3. Configure Supabase
 
-3. Copy environment variables:
+Create a Supabase project and execute the SQL script located in:
 
-```bash
-cp .env.example .env.local
+```text
+supabase/schema.sql
 ```
 
-4. Fill in:
+### 4. Configure Environment Variables
 
-```bash
-NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
+Create a `.env.local` file:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
 
-5. Start the app:
+### 5. Run the Application
 
 ```bash
 npm run dev
 ```
 
-New signups automatically receive a seeded workspace, board, labels, columns, and tasks.
+Open:
+
+```text
+http://localhost:3000
+```
 
 ## Deployment
 
-Deploy to Vercel, set the same environment variables, and ensure Supabase Auth redirect URLs include:
+Deploy using Vercel and configure the same environment variables.
 
-- `http://localhost:3000/auth/callback`
-- `https://your-domain.com/auth/callback`
+Add the following Supabase redirect URLs:
 
-## Architecture
+```text
+http://localhost:3000/auth/callback
+https://your-domain.com/auth/callback
+```
 
-- `app/` contains App Router routes, protected layouts, server actions, API routes, loading and error states.
-- `components/` contains reusable UI primitives, auth UI, shell layout, board UI, task modal, notifications, and theme controls.
-- `lib/` contains Supabase clients, typed data fetchers, validation schemas, utilities, and domain types.
-- `store/` contains Zustand state for optimistic Kanban interactions.
-- `supabase/schema.sql` contains PostgreSQL tables, indexes, RLS policies, triggers, defaults, audit logging, and realtime publication.
+## Key Functionalities
+
+* Create and manage workspaces
+* Create boards and columns
+* Drag and drop tasks between columns
+* Real-time updates across users
+* Secure authentication and authorization
+* Analytics and productivity tracking
+
+## Future Enhancements
+
+* Team collaboration and mentions
+* File attachments
+* Calendar integration
+* AI-powered task prioritization
+* Advanced reporting and analytics
+
+## Author
+
+**Priya Dharshini**
